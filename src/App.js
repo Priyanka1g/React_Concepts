@@ -1,12 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from 'react'
+import Counter from './components/Counter'
+export default function App() {
   return (
-    <div className="App">
-      <h1>hiii</h1>
+    <div>
+      <Counter/>
     </div>
-  );
+  )
 }
-
-export default App;
