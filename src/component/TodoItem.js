@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function TodoItem() {
+export default function TodoItem(props) {
     return (
         <div
             style={{
@@ -10,7 +10,8 @@ export default function TodoItem() {
                 height: '20vh',
             }}
         >
-            <h1>i m todoitems</h1>
+            {/* <h1>i m todoitems</h1> */}
+            <li>{props.todo.text}</li>
         </div>
     )
 }

@@ -1,9 +1,13 @@
 import React from 'react'
 import { useState } from 'react'
-export default function TodoForm() {
+export default function TodoForm({onAdditem}) {
     const[todo, setTodo] = useState('')
     const handleTodoItem = (event)=>{
         setTodo(event.target.value)
+    }
+    const handleAddTodo=()=>{
+        onAdditem(todo);
+        setTodo('');
     }
     return (
         <div

@@ -4,7 +4,7 @@ import TodoList from './component/TodoList'
 // import Typography from "@material-ui/core/Typography"
 export default function App() {
   // list of all the todo items 
-  const todo = ["React learning", "Props ", "List rendering", "keys", "Conditional Rendering"]
+  // const todo = ["React learning", "Props ", "List rendering", "keys", "Conditional Rendering"]
   const[todos, setTodos] = useState([])
   // const listitemsn = todo.map((item, index) => <li key={index}>{item}</li>)
   // const isloggedin = true;
@@ -45,7 +45,7 @@ export default function App() {
     } */}
     {/* //passing the callback fun to child as a props  */}
     <TodoForm onAdditem = {handleAddTodo}/>
-    {todo.length>0?<TodoList todos={todos}/>:<p>No todo available</p>}
+    {todos.length>0?<TodoList todos={todos}/>:<p>No todo available</p>}
     </div>
   )
 }
