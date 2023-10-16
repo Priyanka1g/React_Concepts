@@ -1,6 +1,10 @@
 import React from 'react'
-
+import { useState } from 'react'
 export default function TodoForm() {
+    const[todo, setTodo] = useState('')
+    const handleTodoItem = (event)=>{
+        setTodo(event.target.value)
+    }
     return (
         <div
             style={{
@@ -10,7 +14,9 @@ export default function TodoForm() {
                 height: '20vh',
             }}
         >
-            <h1>I m TodoForm</h1>
+            {/* <h1>I m TodoForm</h1> */}
+            <input type="text" placeholder='Add your item here' value={todo} onChange={handleTodoItem}></input>
+            <button onClick={handleAddTodo}>Add item</button>
         </div>
     )
 }
