@@ -11,7 +11,7 @@ export default function TodoItem(props) {
             }}
         >
             {/* <h1>i m todoitems</h1> */}
-            <li>{props.todo.text}</li>
+            <li>{props.todo}</li>
         </div>
     )
 }

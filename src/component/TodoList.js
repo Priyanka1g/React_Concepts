@@ -2,6 +2,7 @@ import React from 'react'
 import TodoItem from './TodoItem'
 
 export default function TodoList(props) {
+    console.log(props.todos, 'abc')
     return (
         <div
             style={{
@@ -12,9 +13,9 @@ export default function TodoList(props) {
             }}
         >
             {/* <h1>I am todolist</h1> */}
-            <ul>
-                {props.todos.map((todo, index)=>(<TodoItem key={index} todo={todo}/>))}
-            </ul>
+            <h4>
+                {props.todos.map((todo, index) => (<TodoItem key={index} todo={todo} />))}
+            </h4>
         </div>
     )
 }

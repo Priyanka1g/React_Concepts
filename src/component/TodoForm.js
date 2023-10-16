@@ -4,11 +4,13 @@ export default function TodoForm({onAdditem}) {
     const[todo, setTodo] = useState('')
     const handleTodoItem = (event)=>{
         setTodo(event.target.value)
+        console.log(event.target.value)
     }
     const handleAddTodo=()=>{
         onAdditem(todo);
         setTodo('');
     }
+    console.log(todo);
     return (
         <div
             style={{

@@ -19,7 +19,7 @@ export default function App() {
   //callback function
   //receiving the data from child component
   const handleAddTodo=(newtodos)=>{
-    setTodos(todos, ...newtodos);
+    setTodos([newtodos, ...todos]);
   }
   return (
     <div>
