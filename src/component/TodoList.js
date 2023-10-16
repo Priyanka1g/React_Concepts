@@ -5,12 +5,6 @@ export default function TodoList(props) {
     console.log(props.todos, 'abc')
     return (
         <div
-            style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                height: '20vh',
-            }}
         >
             {/* <h1>I am todolist</h1> */}
             <h4>
