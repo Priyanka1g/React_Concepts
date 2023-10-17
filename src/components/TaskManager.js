@@ -1,7 +1,18 @@
 import React, { useState } from 'react'
+import { useEffect } from 'react';
 export default function TaskManager() {
     const[task, setTask] = useState('')
     const[tasklist, setTasklist] = useState([]);
+    useEffect(() => {
+        const savedTasks = JSON.parse(localStorage.getItem('task')) || [];
+        setTasklist(savedTasks)
+      }, []);
+    
+      // Save tasks to localStorage whenever tasks state changes
+      useEffect(() => {
+        localStorage.setItem('task', JSON.stringify(task));
+      }, [task]);
+
     const inputHandler =(event)=>{
         setTask(event.target.value)
         console.log(event.target.value);
