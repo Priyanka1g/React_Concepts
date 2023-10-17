@@ -1,10 +1,11 @@
 import React from 'react'
-
+import './App.css';
+import TaskManager from './components/TaskManager';
 export default function App() {
   return (
-    <div>
-      <h1>hii</h1>
+    <div className='App'>
+      <h1>Hooks</h1>
+      <TaskManager/>
     </div>
   )
 }
-
