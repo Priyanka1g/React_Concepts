@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import './FormData.css'
 export default function FormData() {
   // intially the object is empty for all the field 
-  const [data, setData] = useState({ name: '', age: '', company: '' })
+  const [data, setData] = useState({ name: '', age: '', company: '', feedback:'' })
   //for storing the data of every time use renter
   const [user, setUser] = useState([]);
 
@@ -18,8 +18,12 @@ export default function FormData() {
     console.log(data);
   }
   const submitHandler = () => {
-    setUser([...user, data]);
-    setData({ name: '', age: '', company: '' })
+    if (data.name && data.age && data.company&&data.feedback) {
+      setUser([...user, data]);
+      setData({ name: '', age: '', company: '', feedback:''})
+    } else {
+      alert('Please fill out all fields before submitting.');
+    }
   }
   return (
     <div className="form-container">
@@ -38,6 +42,10 @@ export default function FormData() {
           <label htmlFor="company">Company:</label>
           <input placeholder='Enter user Company name' id='company' type='text' value={data.company} name="company" onChange={changeHandler} required></input>
         </div>
+        <div className="form-group">
+          <label htmlFor="feedback">Feeedback:</label>
+          <input placeholder='Enter user feedback' id='feedback' type='text' value={data.feedback} name="feedback" onChange={changeHandler} required></input>
+        </div>
         <button onClick={submitHandler}>Submit</button>
       </div>
       <div className="user-table">
@@ -48,6 +56,7 @@ export default function FormData() {
               <th>Name</th>
               <th>Age</th>
               <th>Company</th>
+              <th>Feedback</th>
             </tr>
           </thead>
           <tbody>
@@ -56,6 +65,7 @@ export default function FormData() {
                 <td>{item.name}</td>
                 <td>{item.age}</td>
                 <td>{item.company}</td>
+                <td>{item.feedback}</td>
               </tr>
             ))}
           </tbody>
