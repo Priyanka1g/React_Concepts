@@ -9,7 +9,9 @@ function App() {
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then((response) => response.json())
       .then((data) => {
+        // console.log(posts);
         setPosts(data);
+        console.log(posts);
       });
   }, []);
 
@@ -27,6 +29,7 @@ function App() {
             </Card>
           </Col>
         ))}
+        {/* <h1>hi</h1> */}
       </Row>
     </Container>
   );
