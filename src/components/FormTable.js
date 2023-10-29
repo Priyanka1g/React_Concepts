@@ -1,33 +1,31 @@
-// FormTable.js
-import React from 'react';
-import { useSelector } from 'react-redux';
-
-export default function FormTable() {
-  const users = useSelector((state) => state.user);
-
+import React from 'react'
+import './FormData.css'
+export default function FormTable({users}) {
   return (
-    <div className="user-table">
-      <h2>User Data Table</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Company</th>
-            <th>Feedback</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map((user, index) => (
-            <tr key={index}>
-              <td>{user.name}</td>
-              <td>{user.age}</td>
-              <td>{user.company}</td>
-              <td>{user.feedback}</td>
+    <div>
+       <div className="user-table">
+        <h2>User Data Table</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Company</th>
+              <th>Feedback</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {users.map((item, index) => (
+              <tr key={index}>
+                <td>{item.name}</td>
+                <td>{item.age}</td>
+                <td>{item.company}</td>
+                <td>{item.feedback}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
-  );
+  )
 }
